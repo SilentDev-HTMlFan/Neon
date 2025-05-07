@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: black;
+    font-family: 'Arial', sans-serif;
+
+}
+
+.game-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(45deg, navy, black);
+}
+
+.player {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 20%;
+    left: 50px;
+    background: cyan;
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    box-shadow: 0 0 20px cyan;
+}
+
+.projectile {
+    width: 10px;
+    height: 4px;
+    background: magenta;
+    position: absolute;
+    box-shadow: 0 0 10px magenta;
+}
+
+.enemy {
+    width: 40px;
+    height: 40px;
+    background: red;
+    position: absolute;
+    clip-path: circle(50% at 50% 50%);
+    box-shadow: 0 0 20px red;
+}
+
+.hud{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: cyan;
+    font-size: 24px;
+    text-shadow: 0 0 10px cyan;
+    font-family: 'Courier New', monospace;
+}
+
+.hud div {
+    margin-bottom: 10px;
+}
+
+.explosion {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: orange;
+    border-radius: 50%;
+    animation: explode 0.5s ease-out;
+}
+
+@keyframes explode {
+    0% {transform: scale(0); opacity: 1;}
+    100% {transform: scale(2); opacity: 0;}
+}
